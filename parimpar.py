@@ -5,6 +5,7 @@ import sys
 os.system("cls")
 
 while True:
+    os.system("cls")
     i = input("Par ou ímpar? ").lower()
 
     os.system("cls")
@@ -28,7 +29,13 @@ while True:
                 print("O programa ganhou.")
             else:
                 print("Parabéns! Você venceu.")
-
+                r = input("Deseja jogar novamente? ").lower()
+        if r in ["sim","s"]:
+            print("Reiniciando o jogo...\n")
+            continue
+        elif r in ["não","n","nao"]:
+            print("Encerrando o jogo...")
+            sys.exit()
     elif i in ["par"]:
         print("Você escolheu par, então o programa escolhe ímpar.")
         resposta = int(input("Qual número par você escolhe? "))
@@ -54,7 +61,6 @@ while True:
             continue
         elif r in ["não","n","nao"]:
             print("Encerrando o jogo...")
-            os.system("cls")
             sys.exit()
     else:
         print("Escolha inválida! Digite 'par' ou 'impar'.")
